@@ -12,10 +12,10 @@ namespace AS_91896_Level_2
 {
     public partial class SPCA : Form
     {
-
-        public Dictionary<string, string> SPCAIndex = new Dictionary<string, string>();
-        public List<string> nameList = new List<string>();
-
+        //Global Variables
+        public Random rd = new Random();
+        public Dictionary<int, string> SPCAIndex = new Dictionary<int, string>();
+        public List<int> codeList = new List<int>();
 
         NewAnimal na = new NewAnimal();
 
@@ -24,10 +24,10 @@ namespace AS_91896_Level_2
             InitializeComponent();
         }
 
+
+
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-
-            
 
             if(Convert.ToInt32(cboBxFood.SelectedItem) == 1)
             {
@@ -74,13 +74,16 @@ namespace AS_91896_Level_2
 
         private void btnAddDetails_Click(object sender, EventArgs e)
         {
-            na.getName(txtBxName.Text);
 
-            na.getSpecies((string)cboBxSpecies.SelectedItem);
+            int petCode = rd.Next(1000, 9999);
 
-            SPCAIndex.Add(txtBxName.Text, na.recieptGen());
+            na.getDetails(txtBxName.Text, (string)cboBxSpecies.SelectedItem, petCode);
 
-            nameList.Add(txtBxName.Text);
+            SPCAIndex.Add(petCode, na.recieptGen());
+
+            codeList.Add(petCode);
+
+            rtxOutput.Text = na.recieptGen();
 
             txtBxName.Clear();
             numFood.Value = 0;
@@ -88,15 +91,23 @@ namespace AS_91896_Level_2
 
             lstBxPetCatalouge.Items.Clear();
 
-            for (int i = 0; i < nameList.Count; i++)
+            for (int i = 0; i < codeList.Count; i++)
             {
-                lstBxPetCatalouge.Items.Add(nameList[i]);
+                lstBxPetCatalouge.Items.Add(codeList[i]);
             }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            rtxOutput.Text = SPCAIndex[(string)lstBxPetCatalouge.SelectedItem];
+
+            try
+            {
+                rtxOutput.Text = SPCAIndex[(int)lstBxPetCatalouge.SelectedItem];
+            }
+            catch (Exception)
+            {
+                rtxOutput.Text = "Please select a valid item";
+            }
         }
     }
 }
