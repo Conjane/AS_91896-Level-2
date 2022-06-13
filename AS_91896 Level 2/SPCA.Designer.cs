@@ -137,12 +137,12 @@ namespace AS_91896_Level_2
             // 
             // lstBxPetCatalouge
             // 
-            this.lstBxPetCatalouge.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstBxPetCatalouge.Font = new System.Drawing.Font("Sitka Banner", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBxPetCatalouge.FormattingEnabled = true;
-            this.lstBxPetCatalouge.ItemHeight = 25;
+            this.lstBxPetCatalouge.ItemHeight = 26;
             this.lstBxPetCatalouge.Location = new System.Drawing.Point(32, 336);
             this.lstBxPetCatalouge.Name = "lstBxPetCatalouge";
-            this.lstBxPetCatalouge.Size = new System.Drawing.Size(255, 129);
+            this.lstBxPetCatalouge.Size = new System.Drawing.Size(255, 108);
             this.lstBxPetCatalouge.TabIndex = 10;
             this.lstBxPetCatalouge.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
