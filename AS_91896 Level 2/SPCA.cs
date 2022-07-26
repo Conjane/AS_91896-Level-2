@@ -12,102 +12,37 @@ namespace AS_91896_Level_2
 {
     public partial class SPCA : Form
     {
-        //Global Variables
-        public Random rd = new Random();
-        public Dictionary<int, string> SPCAIndex = new Dictionary<int, string>();
-        public List<int> codeList = new List<int>();
+        AnimalManager am;
 
-        NewAnimal na = new NewAnimal();
-
-        public SPCA()
+        public SPCA(AnimalManager am)
         {
+            this.am = am;
+            
             InitializeComponent();
         }
 
-
-
-        private void btnAddFood_Click(object sender, EventArgs e)
+        private void btnAddAnimal_Click(object sender, EventArgs e)
         {
-
-            if(Convert.ToInt32(cboBxFood.SelectedItem) == 1)
-            {
-                na.Day1((int)numFood.Value);
-            }
-            
-            else if (Convert.ToInt32(cboBxFood.SelectedItem) == 2)
-            {
-                na.Day2((int)numFood.Value);
-            }
-            
-            else if (Convert.ToInt32(cboBxFood.SelectedItem) == 3)
-            {
-                na.Day3((int)numFood.Value);
-            }
-            
-            else if (Convert.ToInt32(cboBxFood.SelectedItem) == 4)
-            {
-                na.Day4((int)numFood.Value);
-            }
-            
-            else if (Convert.ToInt32(cboBxFood.SelectedItem) == 5)
-            {
-                na.Day5((int)numFood.Value);
-            }
-            
-            else if (Convert.ToInt32(cboBxFood.SelectedItem) == 6)
-            {
-                na.Day6((int)numFood.Value);
-            }
-            
-            else
-            {
-                na.Day7((int)numFood.Value);
-            }
-
-            numFood.Value = 0;
+            this.Hide();
+            AddAnimal window = new AddAnimal(am);
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
         }
 
-        private void cboBxFood_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            numFood.Value = 0;
+            this.Hide();
+            SearchAnimal window = new SearchAnimal(am);
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
         }
 
-        private void btnAddDetails_Click(object sender, EventArgs e)
+        private void btnSummary_Click(object sender, EventArgs e)
         {
-
-            int petCode = rd.Next(1000, 9999);
-
-            na.getDetails(txtBxName.Text, (string)cboBxSpecies.SelectedItem, petCode);
-
-            SPCAIndex.Add(petCode, na.recieptGen());
-
-            codeList.Add(petCode);
-
-            rtxOutput.Text = na.recieptGen();
-
-            txtBxName.Clear();
-            numFood.Value = 0;
-            cboBxSpecies.SelectedItem = "";
-
-            lstBxPetCatalouge.Items.Clear();
-
-            for (int i = 0; i < codeList.Count; i++)
-            {
-                lstBxPetCatalouge.Items.Add(codeList[i]);
-            }
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            try
-            {
-                rtxOutput.Text = SPCAIndex[(int)lstBxPetCatalouge.SelectedItem];
-            }
-            catch (Exception)
-            {
-                rtxOutput.Text = "Please select a valid item";
-            }
+            this.Hide();
+            Summary window = new Summary(am);
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
         }
     }
 }

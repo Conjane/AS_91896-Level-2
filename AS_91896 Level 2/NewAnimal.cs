@@ -6,91 +6,69 @@ using System.Threading.Tasks;
 
 namespace AS_91896_Level_2
 {
-
-
-
-    class NewAnimal
+    public class NewAnimal
     {
-        public int day1Food;
-        public int day2Food;
-        public int day3Food;
-        public int day4Food;
-        public int day5Food;
-        public int day6Food;
-        public int day7Food;
+
+        //Global Variables
         public string name;
+        public int age;
         public string species;
-        public int petCode;
+        public string specNotes;
+        public int IDNumber;
+        public List<int> food = new List<int>();
 
-        public NewAnimal()
-        {
+        AnimalManager am = new AnimalManager();
 
+        public NewAnimal() 
+        { 
+            
         }
 
-        public void Day1(int day1Food)
+        public string GetName()
         {
-            this.day1Food = day1Food;
+            return name;
+        }
+        public string GetSpecies()
+        {
+            return species;
+        }
+        public int GetAge()
+        {
+            return age;
+        }
+        public int GetID()
+        {
+            return IDNumber;
         }
 
-        public void Day2(int day2Food)
-        {
-            this.day2Food = day2Food;
-        }
-
-        public void Day3(int day3Food)
-        {
-            this.day3Food = day3Food;
-        }
-
-        public void Day4(int day4Food)
-        {
-            this.day4Food = day4Food;
-        }
-
-        public void Day5(int day5Food)
-        {
-            this.day5Food = day5Food;
-        }
-
-        public void Day6(int day6Food)
-        {
-            this.day6Food = day6Food;
-        }
-
-        public void Day7(int day7Food)
-        {
-            this.day7Food = day7Food;
-        }
-
-        public void getDetails(string name, string species, int petCode)
+        public void SetDetails(string name, int age, string species, string specNotes, int ID)
         {
             this.name = name;
+            this.age = age;
             this.species = species;
-            this.petCode = petCode;
+            this.specNotes = specNotes;
+            this.IDNumber = ID;
+        }
+        
+        public void SetConsumption(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
+        {
+            food.Add(day1);
+            food.Add(day2);
+            food.Add(day3);
+            food.Add(day4);
+            food.Add(day5);
+            food.Add(day6);
+            food.Add(day7);
         }
 
-        public string recieptGen()
+        public string reciept()
         {
             return $"Name: {name} \n" +
-                $"Species: {species} \n" +
-                $"----Food Consumption---- \n" +
-                $"Day 1: {day1Food}g \n" +
-                $"Day 2: {day2Food}g \n" +
-                $"Day 3: {day3Food}g \n" +
-                $"Day 4: {day4Food}g \n" +
-                $"Day 5: {day5Food}g \n" +
-                $"Day 6: {day6Food}g \n" +
-                $"Day 7: {day7Food}g \n" +
-                $"Weekly Cost of Food: $ {foodCost()} \n" +
-                $"Identification Number: {petCode}";
+                $"Age: {age} \n" +
+                $"Species: {species}\n" +
+                $"ID: {IDNumber}";
         }
+    
 
-        public float foodCost()
-        {
-            return (((day1Food + day2Food + day3Food + day4Food + day5Food + day6Food + day7Food) / 1000) * 2);
-        }
-
-
-        
     }
 }

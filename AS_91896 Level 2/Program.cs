@@ -14,9 +14,11 @@ namespace AS_91896_Level_2
         [STAThread]
         static void Main()
         {
+            AnimalManager am = new AnimalManager();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SPCA());
+            Application.Run(new SPCA(am));
         }
     }
 }
