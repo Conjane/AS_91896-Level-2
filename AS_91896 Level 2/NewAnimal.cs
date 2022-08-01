@@ -15,7 +15,13 @@ namespace AS_91896_Level_2
         public string species;
         public string specNotes;
         public int IDNumber;
-        public List<int> food = new List<int>();
+        public int day1;
+        public int day2;
+        public int day3;
+        public int day4;
+        public int day5;
+        public int day6;
+        public int day7;
 
         AnimalManager am = new AnimalManager();
 
@@ -37,8 +43,37 @@ namespace AS_91896_Level_2
             return age;
         }
         public int GetID()
-        {
+        {                                                                 
             return IDNumber;
+        }
+        
+        public int GetDay1()
+        {
+            return day1;
+        }
+        public int GetDay2()
+        {
+            return day2;
+        }
+        public int GetDay3()
+        {
+            return day3;
+        }
+        public int GetDay4()
+        {
+            return day4;
+        }
+        public int GetDay5()
+        {
+            return day5;
+        }
+        public int GetDay6()
+        {
+            return day6;
+        }
+        public int GetDay7()
+        {
+            return day7;
         }
 
         public void SetDetails(string name, int age, string species, string specNotes, int ID)
@@ -52,13 +87,13 @@ namespace AS_91896_Level_2
         
         public void SetConsumption(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
         {
-            food.Add(day1);
-            food.Add(day2);
-            food.Add(day3);
-            food.Add(day4);
-            food.Add(day5);
-            food.Add(day6);
-            food.Add(day7);
+            this.day1 = day1;
+            this.day2 = day2;
+            this.day3 = day3;
+            this.day4 = day4;
+            this.day5 = day5;
+            this.day6 = day6;
+            this.day7 = day7;
         }
 
         public string reciept()

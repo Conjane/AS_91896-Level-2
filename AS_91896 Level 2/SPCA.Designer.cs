@@ -37,9 +37,10 @@ namespace AS_91896_Level_2
             // 
             // btnAddAnimal
             // 
-            this.btnAddAnimal.Location = new System.Drawing.Point(142, 173);
+            this.btnAddAnimal.Location = new System.Drawing.Point(106, 141);
+            this.btnAddAnimal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddAnimal.Name = "btnAddAnimal";
-            this.btnAddAnimal.Size = new System.Drawing.Size(297, 77);
+            this.btnAddAnimal.Size = new System.Drawing.Size(223, 63);
             this.btnAddAnimal.TabIndex = 0;
             this.btnAddAnimal.Text = "Add Animal to the Index";
             this.btnAddAnimal.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@ namespace AS_91896_Level_2
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(142, 265);
+            this.btnSearch.Location = new System.Drawing.Point(106, 215);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(297, 77);
+            this.btnSearch.Size = new System.Drawing.Size(223, 63);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search for an Animal in the Index";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -57,9 +59,10 @@ namespace AS_91896_Level_2
             // 
             // btnSummary
             // 
-            this.btnSummary.Location = new System.Drawing.Point(142, 367);
+            this.btnSummary.Location = new System.Drawing.Point(106, 298);
+            this.btnSummary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSummary.Name = "btnSummary";
-            this.btnSummary.Size = new System.Drawing.Size(297, 77);
+            this.btnSummary.Size = new System.Drawing.Size(223, 63);
             this.btnSummary.TabIndex = 2;
             this.btnSummary.Text = "Summary of All Animals";
             this.btnSummary.UseVisualStyleBackColor = true;
@@ -69,21 +72,24 @@ namespace AS_91896_Level_2
             // 
             this.lblHome.AutoSize = true;
             this.lblHome.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.Location = new System.Drawing.Point(202, 82);
+            this.lblHome.Location = new System.Drawing.Point(152, 67);
+            this.lblHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(167, 31);
+            this.lblHome.Size = new System.Drawing.Size(129, 25);
             this.lblHome.TabIndex = 3;
             this.lblHome.Text = "SPCA HOME";
             // 
             // SPCA
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 550);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(452, 447);
             this.Controls.Add(this.lblHome);
             this.Controls.Add(this.btnSummary);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddAnimal);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SPCA";
             this.Text = "Form1";
             this.ResumeLayout(false);

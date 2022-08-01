@@ -133,8 +133,9 @@ namespace AS_91896_Level_2
             // 
             // lstBoxAnimals
             // 
+            this.lstBoxAnimals.AllowDrop = true;
             this.lstBoxAnimals.FormattingEnabled = true;
-            this.lstBoxAnimals.Location = new System.Drawing.Point(147, 71);
+            this.lstBoxAnimals.Location = new System.Drawing.Point(149, 71);
             this.lstBoxAnimals.Margin = new System.Windows.Forms.Padding(2);
             this.lstBoxAnimals.Name = "lstBoxAnimals";
             this.lstBoxAnimals.Size = new System.Drawing.Size(175, 264);
@@ -168,7 +169,7 @@ namespace AS_91896_Level_2
             // 
             // numAge
             // 
-            this.numAge.Location = new System.Drawing.Point(11, 115);
+            this.numAge.Location = new System.Drawing.Point(12, 117);
             this.numAge.Margin = new System.Windows.Forms.Padding(2);
             this.numAge.Name = "numAge";
             this.numAge.Size = new System.Drawing.Size(91, 20);
@@ -177,7 +178,7 @@ namespace AS_91896_Level_2
             // 
             // txtbxName
             // 
-            this.txtbxName.Location = new System.Drawing.Point(11, 116);
+            this.txtbxName.Location = new System.Drawing.Point(10, 116);
             this.txtbxName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(92, 20);
@@ -186,7 +187,7 @@ namespace AS_91896_Level_2
             // 
             // numID
             // 
-            this.numID.Location = new System.Drawing.Point(11, 116);
+            this.numID.Location = new System.Drawing.Point(10, 116);
             this.numID.Margin = new System.Windows.Forms.Padding(2);
             this.numID.Minimum = new decimal(new int[] {
             1,
@@ -207,9 +208,9 @@ namespace AS_91896_Level_2
             // 
             this.btnClear.Location = new System.Drawing.Point(11, 195);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 34);
+            this.btnClear.Size = new System.Drawing.Size(121, 39);
             this.btnClear.TabIndex = 18;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "Clear Log";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -217,7 +218,7 @@ namespace AS_91896_Level_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GrayText;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(356, 366);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.numID);

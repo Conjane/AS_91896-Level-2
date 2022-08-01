@@ -32,24 +32,24 @@ namespace AS_91896_Level_2
 
         private void btnSearchAnimal_Click(object sender, EventArgs e)
         {
+            lstBoxAnimals.Items.Clear();
 
             if (!cbxSpecies.Text.Equals(""))
             {
                 lstBoxAnimals.Items.Clear();
 
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value))
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
                 {
                     lstBoxAnimals.Items.Add(name);
 
                 }
-
                 cbxSpecies.Text = "";
             }
             else if (!numAge.Value.Equals(-1))
             {
                 lstBoxAnimals.Items.Clear();
 
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value))
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
                 { 
                     lstBoxAnimals.Items.Add(name);
     
@@ -57,32 +57,34 @@ namespace AS_91896_Level_2
 
                 numAge.Value = 0;
             }
-            else if (!numID.Value.Equals(0))
-            {
-                lstBoxAnimals.Items.Clear();
-
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value))
-                {    
-                    lstBoxAnimals.Items.Add(name);
-                }
-
-                numID.Value = 0;
-            }
             else if (!txtbxName.Text.Equals(""))
             {
                 lstBoxAnimals.Items.Clear();
 
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value))
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
                 {
                     lstBoxAnimals.Items.Add(name);
                 }
 
                 txtbxName.Text = "";
             }
+            else if (!numID.Value.Equals(0))
+            {
+                lstBoxAnimals.Items.Clear();
+
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
+                {
+                    lstBoxAnimals.Items.Add(name);
+                }
+
+                numID.Value = 1;
+            }
             else
             {
                 MessageBox.Show("Enter Something");
             }
+
+            
         }
 
         private void cbxSearchForSeearch_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,18 +136,11 @@ namespace AS_91896_Level_2
 
         }
 
+        //This breaks when you click on the lstBx but aren't selecting anything while having a selectable option; so fix it whenever
         private void lstBoxAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
                 MessageBox.Show(am.SearchReciept(lstBoxAnimals.SelectedItem.ToString()));
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Caught Error");
-            }
              
-            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -153,6 +148,5 @@ namespace AS_91896_Level_2
             lstBoxAnimals.Items.Clear();
             am.names.Clear();
         }
-
     }
 }
