@@ -21,7 +21,8 @@ namespace AS_91896_Level_2
 
             numID.Maximum = am.animals.Count();
         }
-
+        
+        //Returns the user to home screen
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -30,15 +31,17 @@ namespace AS_91896_Level_2
             window.Show();
         }
 
+        //Will filter and display animals onto a List Box dependant on what is inputted / Will clear the list box when new values are inputted
         private void btnSearchAnimal_Click(object sender, EventArgs e)
         {
             lstBoxAnimals.Items.Clear();
+            am.names.Clear();
 
             if (!cbxSpecies.Text.Equals(""))
             {
                 lstBoxAnimals.Items.Clear();
 
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSelectSearch.Text))
                 {
                     lstBoxAnimals.Items.Add(name);
 
@@ -49,7 +52,7 @@ namespace AS_91896_Level_2
             {
                 lstBoxAnimals.Items.Clear();
 
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSelectSearch.Text))
                 { 
                     lstBoxAnimals.Items.Add(name);
     
@@ -61,7 +64,7 @@ namespace AS_91896_Level_2
             {
                 lstBoxAnimals.Items.Clear();
 
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSelectSearch.Text))
                 {
                     lstBoxAnimals.Items.Add(name);
                 }
@@ -72,7 +75,7 @@ namespace AS_91896_Level_2
             {
                 lstBoxAnimals.Items.Clear();
 
-                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSearchForSearch.Text))
+                foreach (string name in am.SearchAnimal(txtbxName.Text, (int)numAge.Value, cbxSpecies.Text, (int)numID.Value, cbxSelectSearch.Text))
                 {
                     lstBoxAnimals.Items.Add(name);
                 }
@@ -83,13 +86,25 @@ namespace AS_91896_Level_2
             {
                 MessageBox.Show("Enter Something");
             }
-
-            
         }
 
-        private void cbxSearchForSeearch_SelectedIndexChanged(object sender, EventArgs e)
+        //Display an animals details when selected
+        private void lstBoxAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxSearchForSearch.Text.Equals("Species"))
+            if (lstBoxAnimals.SelectedIndex != -1)
+            {
+                MessageBox.Show(am.SearchReciept(lstBoxAnimals.SelectedItem.ToString()));
+            }
+            else
+            {
+                MessageBox.Show("Please Select an Animal");
+            }
+        }
+
+        //Allows user to select what critria they'd like to search by
+        private void cbxSelectSearch_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cbxSelectSearch.Text.Equals("Species"))
             {
                 lblSpecies.Visible = true;
                 cbxSpecies.Visible = true;
@@ -100,7 +115,7 @@ namespace AS_91896_Level_2
                 lblID.Visible = false;
                 numID.Visible = false;
             }
-            else if (cbxSearchForSearch.Text.Equals("Age"))
+            else if (cbxSelectSearch.Text.Equals("Age"))
             {
                 lblSpecies.Visible = false;
                 cbxSpecies.Visible = false;
@@ -111,7 +126,7 @@ namespace AS_91896_Level_2
                 lblID.Visible = false;
                 numID.Visible = false;
             }
-            else if (cbxSearchForSearch.Text.Equals("Name"))
+            else if (cbxSelectSearch.Text.Equals("Name"))
             {
                 lblSpecies.Visible = false;
                 cbxSpecies.Visible = false;
@@ -122,7 +137,7 @@ namespace AS_91896_Level_2
                 lblID.Visible = false;
                 numID.Visible = false;
             }
-            else if (cbxSearchForSearch.Text.Equals("ID Number"))
+            else if (cbxSelectSearch.Text.Equals("ID Number"))
             {
                 lblSpecies.Visible = false;
                 cbxSpecies.Visible = false;
@@ -134,19 +149,7 @@ namespace AS_91896_Level_2
                 numID.Visible = true;
             }
 
-        }
-
-        //This breaks when you click on the lstBx but aren't selecting anything while having a selectable option; so fix it whenever
-        private void lstBoxAnimals_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                MessageBox.Show(am.SearchReciept(lstBoxAnimals.SelectedItem.ToString()));
-             
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            lstBoxAnimals.Items.Clear();
-            am.names.Clear();
+            
         }
     }
 }

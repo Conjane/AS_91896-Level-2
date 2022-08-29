@@ -119,7 +119,7 @@ namespace AS_91896_Level_2
             // 
             this.lblFood.AutoSize = true;
             this.lblFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFood.Location = new System.Drawing.Point(318, 57);
+            this.lblFood.Location = new System.Drawing.Point(306, 76);
             this.lblFood.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFood.Name = "lblFood";
             this.lblFood.Size = new System.Drawing.Size(187, 20);
@@ -129,7 +129,7 @@ namespace AS_91896_Level_2
             // lblDay1
             // 
             this.lblDay1.AutoSize = true;
-            this.lblDay1.Location = new System.Drawing.Point(320, 102);
+            this.lblDay1.Location = new System.Drawing.Point(320, 103);
             this.lblDay1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDay1.Name = "lblDay1";
             this.lblDay1.Size = new System.Drawing.Size(38, 13);
@@ -139,7 +139,7 @@ namespace AS_91896_Level_2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(320, 218);
+            this.label1.Location = new System.Drawing.Point(320, 222);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -149,7 +149,7 @@ namespace AS_91896_Level_2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 196);
+            this.label2.Location = new System.Drawing.Point(319, 198);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
@@ -179,7 +179,7 @@ namespace AS_91896_Level_2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(320, 125);
+            this.label5.Location = new System.Drawing.Point(319, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
@@ -189,7 +189,7 @@ namespace AS_91896_Level_2
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(320, 239);
+            this.label6.Location = new System.Drawing.Point(320, 246);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
@@ -198,91 +198,91 @@ namespace AS_91896_Level_2
             // 
             // numDay1
             // 
-            this.numDay1.Increment = new decimal(new int[] {
-            25,
+            this.numDay1.Location = new System.Drawing.Point(368, 101);
+            this.numDay1.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay1.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numDay1.Location = new System.Drawing.Point(368, 101);
-            this.numDay1.Margin = new System.Windows.Forms.Padding(2);
             this.numDay1.Name = "numDay1";
             this.numDay1.Size = new System.Drawing.Size(90, 20);
             this.numDay1.TabIndex = 13;
             // 
             // numDay2
             // 
-            this.numDay2.Increment = new decimal(new int[] {
-            25,
+            this.numDay2.Location = new System.Drawing.Point(368, 125);
+            this.numDay2.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay2.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numDay2.Location = new System.Drawing.Point(368, 124);
-            this.numDay2.Margin = new System.Windows.Forms.Padding(2);
             this.numDay2.Name = "numDay2";
             this.numDay2.Size = new System.Drawing.Size(90, 20);
             this.numDay2.TabIndex = 14;
             // 
             // numDay3
             // 
-            this.numDay3.Increment = new decimal(new int[] {
-            25,
+            this.numDay3.Location = new System.Drawing.Point(368, 149);
+            this.numDay3.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay3.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numDay3.Location = new System.Drawing.Point(368, 150);
-            this.numDay3.Margin = new System.Windows.Forms.Padding(2);
             this.numDay3.Name = "numDay3";
             this.numDay3.Size = new System.Drawing.Size(90, 20);
             this.numDay3.TabIndex = 15;
             // 
             // numDay4
             // 
-            this.numDay4.Increment = new decimal(new int[] {
-            25,
+            this.numDay4.Location = new System.Drawing.Point(368, 173);
+            this.numDay4.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay4.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numDay4.Location = new System.Drawing.Point(368, 172);
-            this.numDay4.Margin = new System.Windows.Forms.Padding(2);
             this.numDay4.Name = "numDay4";
             this.numDay4.Size = new System.Drawing.Size(90, 20);
             this.numDay4.TabIndex = 16;
             // 
             // numDay5
             // 
-            this.numDay5.Increment = new decimal(new int[] {
-            25,
+            this.numDay5.Location = new System.Drawing.Point(368, 197);
+            this.numDay5.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay5.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numDay5.Location = new System.Drawing.Point(368, 194);
-            this.numDay5.Margin = new System.Windows.Forms.Padding(2);
             this.numDay5.Name = "numDay5";
             this.numDay5.Size = new System.Drawing.Size(90, 20);
             this.numDay5.TabIndex = 17;
             // 
             // numDay6
             // 
-            this.numDay6.Increment = new decimal(new int[] {
-            25,
+            this.numDay6.Location = new System.Drawing.Point(368, 221);
+            this.numDay6.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay6.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numDay6.Location = new System.Drawing.Point(368, 216);
-            this.numDay6.Margin = new System.Windows.Forms.Padding(2);
             this.numDay6.Name = "numDay6";
             this.numDay6.Size = new System.Drawing.Size(90, 20);
             this.numDay6.TabIndex = 18;
             // 
             // numDay7
             // 
-            this.numDay7.Increment = new decimal(new int[] {
-            25,
+            this.numDay7.Location = new System.Drawing.Point(368, 245);
+            this.numDay7.Margin = new System.Windows.Forms.Padding(2);
+            this.numDay7.Maximum = new decimal(new int[] {
+            1000,
             0,
             0,
             0});
-            this.numDay7.Location = new System.Drawing.Point(368, 237);
-            this.numDay7.Margin = new System.Windows.Forms.Padding(2);
             this.numDay7.Name = "numDay7";
             this.numDay7.Size = new System.Drawing.Size(90, 20);
             this.numDay7.TabIndex = 19;
@@ -371,6 +371,7 @@ namespace AS_91896_Level_2
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnHome);
+            this.ForeColor = System.Drawing.Color.Coral;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddAnimal";
             this.Text = "AddAnimal";

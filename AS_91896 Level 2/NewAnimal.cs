@@ -15,13 +15,7 @@ namespace AS_91896_Level_2
         public string species;
         public string specNotes;
         public int IDNumber;
-        public int day1;
-        public int day2;
-        public int day3;
-        public int day4;
-        public int day5;
-        public int day6;
-        public int day7;
+        public List<int> consumption = new List<int>();
 
         AnimalManager am = new AnimalManager();
 
@@ -30,6 +24,7 @@ namespace AS_91896_Level_2
             
         }
 
+        //All of the Getter methods that allow information to be called from within a list
         public string GetName()
         {
             return name;
@@ -46,36 +41,16 @@ namespace AS_91896_Level_2
         {                                                                 
             return IDNumber;
         }
-        
-        public int GetDay1()
+        public string GetSpecNotes()
         {
-            return day1;
+            return specNotes;
         }
-        public int GetDay2()
+        public List<int> GetConsumption()
         {
-            return day2;
-        }
-        public int GetDay3()
-        {
-            return day3;
-        }
-        public int GetDay4()
-        {
-            return day4;
-        }
-        public int GetDay5()
-        {
-            return day5;
-        }
-        public int GetDay6()
-        {
-            return day6;
-        }
-        public int GetDay7()
-        {
-            return day7;
+            return consumption;
         }
 
+        //Method that sets the correct details for corresponding animal
         public void SetDetails(string name, int age, string species, string specNotes, int ID)
         {
             this.name = name;
@@ -85,18 +60,14 @@ namespace AS_91896_Level_2
             this.IDNumber = ID;
         }
         
-        public void SetConsumption(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
+        //Method that sets the correct consumptions for corresponding animal
+        public void SetConsumption(List<int> consumption)
         {
-            this.day1 = day1;
-            this.day2 = day2;
-            this.day3 = day3;
-            this.day4 = day4;
-            this.day5 = day5;
-            this.day6 = day6;
-            this.day7 = day7;
+            this.consumption = consumption;
         }
 
-        public string reciept()
+        //Method that creates a receipt for the animal
+        public string receipt()
         {
             return $"Name: {name} \n" +
                 $"Age: {age} \n" +

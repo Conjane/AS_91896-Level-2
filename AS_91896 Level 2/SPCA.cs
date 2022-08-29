@@ -21,6 +21,7 @@ namespace AS_91896_Level_2
             InitializeComponent();
         }
 
+        //Takes user to the AddAnimal Form
         private void btnAddAnimal_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -29,6 +30,7 @@ namespace AS_91896_Level_2
             window.Show();
         }
 
+        //Takes user to the SearchAnimal Form
         private void btnSearch_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -37,6 +39,7 @@ namespace AS_91896_Level_2
             window.Show();
         }
 
+        //Takes user to the Summary Form
         private void btnSummary_Click(object sender, EventArgs e)
         {
             this.Hide();

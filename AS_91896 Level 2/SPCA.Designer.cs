@@ -37,8 +37,8 @@ namespace AS_91896_Level_2
             // 
             // btnAddAnimal
             // 
-            this.btnAddAnimal.Location = new System.Drawing.Point(106, 141);
-            this.btnAddAnimal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddAnimal.Location = new System.Drawing.Point(11, 84);
+            this.btnAddAnimal.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAnimal.Name = "btnAddAnimal";
             this.btnAddAnimal.Size = new System.Drawing.Size(223, 63);
             this.btnAddAnimal.TabIndex = 0;
@@ -48,8 +48,8 @@ namespace AS_91896_Level_2
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(106, 215);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(11, 151);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(223, 63);
             this.btnSearch.TabIndex = 1;
@@ -59,8 +59,8 @@ namespace AS_91896_Level_2
             // 
             // btnSummary
             // 
-            this.btnSummary.Location = new System.Drawing.Point(106, 298);
-            this.btnSummary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSummary.Location = new System.Drawing.Point(11, 218);
+            this.btnSummary.Margin = new System.Windows.Forms.Padding(2);
             this.btnSummary.Name = "btnSummary";
             this.btnSummary.Size = new System.Drawing.Size(223, 63);
             this.btnSummary.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace AS_91896_Level_2
             // 
             this.lblHome.AutoSize = true;
             this.lblHome.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.Location = new System.Drawing.Point(152, 67);
+            this.lblHome.Location = new System.Drawing.Point(56, 30);
             this.lblHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHome.Name = "lblHome";
             this.lblHome.Size = new System.Drawing.Size(129, 25);
@@ -84,12 +84,13 @@ namespace AS_91896_Level_2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(452, 447);
+            this.ClientSize = new System.Drawing.Size(246, 288);
             this.Controls.Add(this.lblHome);
             this.Controls.Add(this.btnSummary);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddAnimal);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ForeColor = System.Drawing.Color.Coral;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SPCA";
             this.Text = "Form1";
             this.ResumeLayout(false);

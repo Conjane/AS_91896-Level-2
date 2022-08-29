@@ -10,24 +10,21 @@ namespace AS_91896_Level_2
     {
         public List<string> names = new List<string>();
         public List<NewAnimal> animals = new List<NewAnimal>();
-        public List<int> Day1Food = new List<int>();
-        public List<int> Day2Food = new List<int>();
-        public List<int> Day3Food = new List<int>();
-        public List<int> Day4Food = new List<int>();
-        public List<int> Day5Food = new List<int>();
-        public List<int> Day6Food = new List<int>();
-        public List<int> Day7Food = new List<int>();
+        public List<int> consumption = new List<int>();
+        private readonly float costMultiplier = (float)0.0033;
 
         public AnimalManager()
         {
 
         }
     
+        //Adds an Animals details 
         public void addAnimal(NewAnimal a)
         {
             animals.Add(a);
         }
 
+        //Allows for the correct animal to be presented when searched for 
         public List<string> SearchAnimal(string name, int age, string species, int ID, string option)
         {
 
@@ -66,9 +63,12 @@ namespace AS_91896_Level_2
             return names;
         }
 
+        //A complete summary of every/select animals food cunsumption on a day to day basis
         public string FoodSummary(string option, string species, int age)
         {
             string selectedOption = $"No Values Inputed";
+            int sumConsumption = 0;
+            List<int> dayConsumption = new List<int>() {0, 0, 0, 0, 0, 0, 0};
 
             foreach (NewAnimal animal in animals)
             {
@@ -78,14 +78,14 @@ namespace AS_91896_Level_2
 
                     if (animal.GetSpecies().Equals(species))
                     {
-                        Day1Food.Add(animal.GetDay1());
-                        Day2Food.Add(animal.GetDay2());
-                        Day3Food.Add(animal.GetDay3());
-                        Day4Food.Add(animal.GetDay4());
-                        Day5Food.Add(animal.GetDay5());
-                        Day6Food.Add(animal.GetDay6());
-                        Day7Food.Add(animal.GetDay7());
+                        int dayIndex = 0;
+                        foreach(int day in animal.GetConsumption())
+                        {
+                            sumConsumption += day;
+                            dayConsumption[dayIndex] += day;
+                            dayIndex++;
 
+                        }
                     }
                 }
                 else if (option.Equals("Age"))
@@ -94,41 +94,44 @@ namespace AS_91896_Level_2
 
                     if (animal.GetAge().Equals(age))
                     {
-                        Day1Food.Add(animal.GetDay1());
-                        Day2Food.Add(animal.GetDay2());
-                        Day3Food.Add(animal.GetDay3());
-                        Day4Food.Add(animal.GetDay4());
-                        Day5Food.Add(animal.GetDay5());
-                        Day6Food.Add(animal.GetDay6());
-                        Day7Food.Add(animal.GetDay7());
+                        int dayIndex = 0;
+                        foreach (int day in animal.GetConsumption())
+                        {
+                            sumConsumption += day;
+                            dayConsumption[dayIndex] += day;
+                            dayIndex++;
+
+                        }
                     }
                 }
                 else
                 {
                     selectedOption = $"Summary of all Animals";
 
-                    Day1Food.Add(animal.GetDay1());
-                    Day2Food.Add(animal.GetDay2());
-                    Day3Food.Add(animal.GetDay3());
-                    Day4Food.Add(animal.GetDay4());
-                    Day5Food.Add(animal.GetDay5());
-                    Day6Food.Add(animal.GetDay6());
-                    Day7Food.Add(animal.GetDay7());
+                    int dayIndex = 0;
+                    foreach (int day in animal.GetConsumption())
+                    {
+                        sumConsumption += day;
+                        dayConsumption[dayIndex] += day;
+                        dayIndex++;
+
+                    }
                 }
             }
 
             return $"{selectedOption} \n" + 
-                $"{Day1Food.Sum()} g: Cost $ {Math.Round(Day1Food.Sum() * 1.00265 * 100) / 100} \n" +
-                $"{Day2Food.Sum()} g: Cost $ {Math.Round(Day2Food.Sum() * 1.00265 * 100) / 100} \n" +
-                $"{Day3Food.Sum()} g: Cost $ {Math.Round(Day3Food.Sum() * 1.00265 * 100) / 100} \n" +
-                $"{Day4Food.Sum()} g: Cost $ {Math.Round(Day4Food.Sum() * 1.00265 * 100) / 100} \n" +
-                $"{Day5Food.Sum()} g: Cost $ {Math.Round(Day5Food.Sum() * 1.00265 * 100) / 100} \n" +
-                $"{Day6Food.Sum()} g: Cost $ {Math.Round(Day6Food.Sum() * 1.00265 * 100) / 100} \n" +
-                $"{Day7Food.Sum()} g: Cost $ {Math.Round(Day7Food.Sum() * 1.00265 * 100) / 100} \n" +
-                $"Total: {totalCalc(Day1Food.Sum(), Day2Food.Sum(), Day3Food.Sum(), Day4Food.Sum(), Day5Food.Sum(), Day6Food.Sum(), Day7Food.Sum())} g " +
-                $"Total Cost: $ {Math.Round(totalCalc(Day1Food.Sum(), Day2Food.Sum(), Day3Food.Sum(), Day4Food.Sum(), Day5Food.Sum(), Day6Food.Sum(), Day7Food.Sum()) * 1.00265 * 100) / 100}";
-                
+                $"{dayConsumption[0]} g: Cost $ {Math.Round(dayConsumption[0] * costMultiplier * 100) / 100} \n" +
+                $"{dayConsumption[1]} g: Cost $ {Math.Round(dayConsumption[1] * costMultiplier * 100) / 100} \n" +
+                $"{dayConsumption[2]} g: Cost $ {Math.Round(dayConsumption[2] * costMultiplier * 100) / 100} \n" +
+                $"{dayConsumption[3]} g: Cost $ {Math.Round(dayConsumption[3] * costMultiplier * 100) / 100} \n" +
+                $"{dayConsumption[4]} g: Cost $ {Math.Round(dayConsumption[4] * costMultiplier * 100) / 100} \n" +
+                $"{dayConsumption[5]} g: Cost $ {Math.Round(dayConsumption[5] * costMultiplier * 100) / 100} \n" +
+                $"{dayConsumption[6]} g: Cost $ {Math.Round(dayConsumption[6] * costMultiplier * 100) / 100} \n" +
+                $"Total: {sumConsumption} g " +
+                $"Total Cost: $ {Math.Round((sumConsumption * costMultiplier * 100) / 100)}";
         }
+        
+        //Returns a reciept of an animals information
         public string SearchReciept(string name)
         {
             string reciept = "";
@@ -140,15 +143,22 @@ namespace AS_91896_Level_2
                     reciept = $"Name: {animal.GetName()} \n" +
                             $"Age: {animal.GetAge()} \n" +
                             $"Species: {animal.GetSpecies()} \n" +
-                            $"ID: {animal.GetID()}";
+                            $"ID: {animal.GetID()} \n" +
+                            $"Consumptions \n" +
+                            $"Day 1: {animal.consumption[0]}g \n" +
+                            $"Day 2: {animal.consumption[1]}g \n" +
+                            $"Day 3: {animal.consumption[2]}g \n" +
+                            $"Day 4: {animal.consumption[3]}g \n" +
+                            $"Day 5: {animal.consumption[4]}g \n" +
+                            $"Day 6: {animal.consumption[5]}g \n" +
+                            $"Day 7: {animal.consumption[6]}g \n" +
+                            $"Total: {animal.consumption.Sum()}g \n" +      
+                            $"Special Notes: {animal.GetSpecNotes()}";
                 }
             }
             return reciept;
         }
-        private int totalCalc(int day1, int day2, int day3, int day4, int day5, int day6, int day7)
-        {
-            return day1 + day2 + day3 + day4 + day5 + day6 + day7;
-        }
+
     
     }
 }

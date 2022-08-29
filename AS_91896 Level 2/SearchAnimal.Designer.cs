@@ -37,12 +37,11 @@ namespace AS_91896_Level_2
             this.lblID = new System.Windows.Forms.Label();
             this.btnSearchAnimal = new System.Windows.Forms.Button();
             this.lstBoxAnimals = new System.Windows.Forms.ListBox();
-            this.cbxSearchForSearch = new System.Windows.Forms.ComboBox();
+            this.cbxSelectSearch = new System.Windows.Forms.ComboBox();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.numAge = new System.Windows.Forms.NumericUpDown();
             this.txtbxName = new System.Windows.Forms.TextBox();
             this.numID = new System.Windows.Forms.NumericUpDown();
-            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numID)).BeginInit();
             this.SuspendLayout();
@@ -142,20 +141,20 @@ namespace AS_91896_Level_2
             this.lstBoxAnimals.TabIndex = 12;
             this.lstBoxAnimals.SelectedIndexChanged += new System.EventHandler(this.lstBoxAnimals_SelectedIndexChanged);
             // 
-            // cbxSearchForSearch
+            // cbxSelectSearch
             // 
-            this.cbxSearchForSearch.FormattingEnabled = true;
-            this.cbxSearchForSearch.Items.AddRange(new object[] {
+            this.cbxSelectSearch.FormattingEnabled = true;
+            this.cbxSelectSearch.Items.AddRange(new object[] {
             "Species",
             "Age",
             "Name",
             "ID Number"});
-            this.cbxSearchForSearch.Location = new System.Drawing.Point(11, 71);
-            this.cbxSearchForSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxSearchForSearch.Name = "cbxSearchForSearch";
-            this.cbxSearchForSearch.Size = new System.Drawing.Size(92, 21);
-            this.cbxSearchForSearch.TabIndex = 13;
-            this.cbxSearchForSearch.SelectedIndexChanged += new System.EventHandler(this.cbxSearchForSeearch_SelectedIndexChanged);
+            this.cbxSelectSearch.Location = new System.Drawing.Point(11, 71);
+            this.cbxSelectSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxSelectSearch.Name = "cbxSelectSearch";
+            this.cbxSelectSearch.Size = new System.Drawing.Size(92, 21);
+            this.cbxSelectSearch.TabIndex = 13;
+            this.cbxSelectSearch.SelectedIndexChanged += new System.EventHandler(this.cbxSelectSearch_SelectedIndexChanged_1);
             // 
             // lblQuestion
             // 
@@ -204,28 +203,17 @@ namespace AS_91896_Level_2
             0});
             this.numID.Visible = false;
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(11, 195);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(121, 39);
-            this.btnClear.TabIndex = 18;
-            this.btnClear.Text = "Clear Log";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // SearchAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(356, 366);
-            this.Controls.Add(this.btnClear);
+            this.ClientSize = new System.Drawing.Size(346, 366);
             this.Controls.Add(this.numID);
             this.Controls.Add(this.txtbxName);
             this.Controls.Add(this.numAge);
             this.Controls.Add(this.lblQuestion);
-            this.Controls.Add(this.cbxSearchForSearch);
+            this.Controls.Add(this.cbxSelectSearch);
             this.Controls.Add(this.lstBoxAnimals);
             this.Controls.Add(this.btnSearchAnimal);
             this.Controls.Add(this.lblID);
@@ -234,6 +222,7 @@ namespace AS_91896_Level_2
             this.Controls.Add(this.cbxSpecies);
             this.Controls.Add(this.lblSpecies);
             this.Controls.Add(this.btnHome);
+            this.ForeColor = System.Drawing.Color.Coral;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SearchAnimal";
             this.Text = "SearchAnimal";
@@ -254,11 +243,10 @@ namespace AS_91896_Level_2
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnSearchAnimal;
         private System.Windows.Forms.ListBox lstBoxAnimals;
-        private System.Windows.Forms.ComboBox cbxSearchForSearch;
+        private System.Windows.Forms.ComboBox cbxSelectSearch;
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.NumericUpDown numAge;
         private System.Windows.Forms.TextBox txtbxName;
         private System.Windows.Forms.NumericUpDown numID;
-        private System.Windows.Forms.Button btnClear;
     }
 }
